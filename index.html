@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhamento de obras</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Acompanhamento de Obras</h1>
+        <p> Sistema web que permite cadastrar informações contratuais de obras.
+        </p>
+    </header>
+    <main>
+        <section>
+            <h2>Seção 1: Cadastro de Obra</h2>
+            <form>
+                <fieldset>
+                    <legend>Informações contratuais</legend>
+
+                    <label for="nome-obra">Nome da obra*:</label>
+                    <input type="text" id="nome-obra" name="nome-obra" required>
+                    
+                    <label for="empresa-contratada">Empresa contratada*:</label>
+                    <input type="text" id="empresa-contratada" name="empresa-contratada" required>
+
+                    <label for="cnpj">CNPJ:</label>
+                    <input 
+                        type="text" 
+                        id="cnpj" 
+                        name="cnpj"
+                        pattern="[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}"
+                        placeholder="00.000.000/0000-00"
+                    >
+
+                    <label for="data-assinatura">Data de assinatura do contrato*:</label>
+                    <input 
+                        type="date" 
+                        id="data-assinatura" 
+                        name="data-assinatura" 
+                        required
+                    >
+
+                    <label for="prazo-contratual">Prazo contratual (em meses)*:</label>
+                    <input
+                        type="number"
+                        id="prazo-contratual"
+                        name="prazo-contratual"
+                        min="1"
+                        required
+                    >
+
+                    <label for="valor-contratado">Valor contratado (R$)*:</label>
+                    <input
+                        type="number"
+                        id="valor-contratado"
+                        name="valor-contratado"
+                        required
+                    >
+                </fieldset>
+                <fieldset>
+                    <legend>Contato da contratada</legend>
+
+                    <label for="email-contratada">E-mail da contratada:</label>
+                    <input
+                        type="email"
+                        id="email-contratada"
+                        name="email-contratada"
+                    >
+
+                    <label for="telefone-responsavel">Telefone do responsável:</label>
+                    <input
+                        type="tel"
+                        id="telefone-responsavel"
+                        name="telefone-responsavel"
+                    >
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tipo de intervenção</legend>
+                    
+                    <input type="radio" id="construcao" name="tipo-intervencao" value="construcao">
+                    <label for="construcao">Construção</label>
+
+                    <input type="radio" id="reforma" name="tipo-intervencao" value="reforma">
+                    <label for="reforma">Reforma</label>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Etapas previstas</legend>
+
+                    <input type="checkbox" id="fundacao" name="etapas" value="fundacao">
+                    <label for="fundacao">Fundação</label>
+
+                    <input type="checkbox" id="piso" name="etapas" value="piso">
+                    <label for="piso">Piso</label>
+
+                    <input type="checkbox" id="impermeabilizacao" name="etapas" value="impermeabilizacao">
+                    <label for="impermeabilizacao">Impermeabilização</label>
+
+                    <input type="checkbox" id="alvenaria" name="etapas" value="alvenaria">
+                    <label for="alvenaria">Alvenaria</label>
+
+                    <input type="checkbox" id="esquadria" name="etapas" value="esquadria">
+                    <label for="esquadria">Esquadrias</label>
+
+                    <input type="checkbox" id="instalacoes-eletricas" name="etapas" value="instalacoes-eletricas">
+                    <label for="instalacoes-eletricas">Instalações elétricas</label>
+
+                    <input type="checkbox" id="instalacoes-hidrossanitarias" name="etapas" value="instalacoes-hidrossanitarias">
+
+                    <label for="instalacoes-hidrossanitarias">Instalações hidrossanitárias</label>
+
+                    <input type="checkbox" id="rede-logica" name="etapas" value="rede-logica">
+                    <label for="rede-logica">Rede lógica</label>
+
+                    <input type="checkbox" id="cftv" name="etapas" value="cftv">
+                    <label for="cftv">CFTV</label>
+
+                    <input type="checkbox" id="revestimento-argamassado" name="etapas" value="revestimento-argamassado">
+                    <label for="revestimento-argamassado">Revestimento argamassado</label>
+
+                    <input type="checkbox" id="pintura" name="etapas" value="pintura">
+                    <label for="pintura">Pintura</label>
+
+                    <input type="checkbox" id="revestimento-ceramico" name="etapas" value="revestimento-ceramico">
+                    <label for="revestimento-ceramico">Revestimento cerâmico</label>
+
+                    <input type="checkbox" id="forro-teto" name="etapas" value="forro-teto">
+                    <label for="forro-teto">Forro e teto</label>
+
+                    <input type="checkbox" id="identidade-visual" name="etapas" value="identidade-visual">
+                    <label for="identidade-visual">Identidade visual</label>
+
+                    <input type="checkbox" id="loucas-metais" name="etapas" value="loucas-metais">
+                    <label for="loucas-metais">Louças e metais</label>
+
+                    <input type="checkbox" id="servicos-gerais" name="etapas" value="servicos-gerais">
+                    <label for="servicos-gerais">Serviços gerais</label>
+
+                    <input type="checkbox" id="demolicoes-remocoes" name="etapas" value="demolicoes-remocoes">
+                    <label for="demolicoes-remocoes">Demolições e Remoções</label>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Fiscalização do contrato</legend>
+
+                    <label for="fiscal-contrato">Fiscal do contrato:</label>
+                    <select id="fiscal-contrato" name="fiscal-contrato">
+                        <option value="">Selecione o fiscal</option>
+                        <option value="funcionario-a">Funcionário A</option>
+                        <option value="funcionario-b">Funcionário B</option>
+                        <option value="funcionario-c">Funcionário C</option>
+                        <option value="funcionario-d">Funcionário D</option>
+                        <option value="funcionario-e">Funcionário E</option>
+                        <option value="funcionario-f">Funcionário F</option>
+                    </select>
+                </fieldset>
+
+                <button type="submit">Cadastrar obra</button>
+
+            </form>
+        </section>
+        <section>
+            <h2>Seção 2: Acompanhamento das Obras</h2>
+            
+            <ul>
+                <li>Informações dos contratos;</li>
+                <li>Controle de prazos;</li>
+                <li>Medições.</li>
+            </ul>
+            <table>
+                <caption>Situação das obras</caption>
+                <thead>
+                    <tr>
+                        <th>Obra</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Reforma da unidade A</td>
+                        <td>Em execução</td>
+                    </tr>
+                    <tr>
+                        <td>Reforma da unidade B</td>
+                        <td>Finalizado</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="https://transparencia.codata.pb.gov.br/obras" target="_blank" rel="noopener noreferrer">
+                Clique no link para verificar mais informações
+            </a>
+            <img 
+            src="assets/images/print-sistema-obrasgovpb.PNG"
+            alt="Exemplo de um painel de obras"
+            >
+        </section>
+    </main>
+    <footer>
+        <p>Projeto Integrador - Acompanhamento de obras</p>
+    </footer>
+</body>
+</html>
